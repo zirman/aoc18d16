@@ -2,95 +2,6 @@ import java.io.File
 import java.io.InputStream
 import java.lang.Exception
 
-//fun <A> Parser<A>.orElse(p: Parser<A>): Parser<A> =
-//    fun(source: String, index: Int): ParseResult<A> {
-//        val result = this.invoke(source, index)
-//
-//        return when (result) {
-//            is ParseResult.OK -> result
-//            is ParseResult.Error -> {
-//                val result2 = p(source, index)
-//
-//                when (result2) {
-//                    is ParseResult.OK -> result2
-//                    is ParseResult.Error -> ParseResult.Error(index) //, "source does not match orElse"
-//                }
-//            }
-//        }
-//    }
-
-//fun <A> parseOneOf(vararg p: Parser<A>): Parser<A> =
-//    fun(s: String, i: Int): ParseResult<A> {
-//        val result = this.invoke(s, i)
-//
-//        return when (result) {
-//            is ParseResult.OK -> result
-//            is ParseResult.Error -> {
-//                val result2 = p(s, i)
-//
-//                when (result2) {
-//                    is ParseResult.OK -> result2
-//                    is ParseResult.Error -> ParseResult.Error(i, "source does not match orElse")
-//                }
-//            }
-//        }
-//    }
-
-//fun parseNotChar(char: Char): Parser<Char> =
-//    fun(source: String, index: Int): ParseResult<Char> =
-//        when {
-//            index >= source.length -> ParseResult.Error(index)
-//            source[index] != char -> ParseResult.OK(index + 1, source[index])
-//            else -> ParseResult.Error(index)
-//        }
-
-//val parseNum: Parser<Int> = parseChar('-')
-//    .optionally()
-//    .andThen { sign ->
-//        parseOneOfChars("0123456789")
-//            .oneOrMoreTimes()
-//            .andThen { digits ->
-//                ((sign?.toString() ?: "") + digits.joinToString("")).toInt().parseLift()
-//            }
-//    }
-
-
-//fun <A : Any> Parser<A>.optionally(): Parser<A?> =
-//    fun(source: String, index: Int): ParseResult<A?> {
-//        if (index >= source.length) {
-//            return ParseResult.Error(index)
-//        }
-//
-//        val result = this(source, index)
-//
-//        return when (result) {
-//            is ParseResult.OK -> result
-//            is ParseResult.Error -> ParseResult.OK(result.index, null)
-//        }
-//    }
-
-
-//    val parseNum: Parser<Int> = parseChar('-')
-//        .optionally()
-//        .andThen { sign ->
-//            parseOneOfChars("0123456789")
-//                .oneOrMoreTimes()
-//                .andThen { digits ->
-//                    ((sign?.toString() ?: "") + digits.joinToString("")).toInt().parseLift()
-//                }
-//        }
-//
-//    val parseString: Parser<String> = parseChar('"')
-//        .andThen { parseOneOfChars("abcdefghijklmnopqrstuvwxyz").zeroOrMoreTimes() }
-//        .andThen { str -> parseChar('"').andThen { str.joinToString("").parseLift() } }
-//
-//    val result = parseString.parse(""""hello"""")
-
-//    when (result) {
-//        is ParseResult.OK ->
-//            println(result.value)
-//    }
-
 typealias Parser<A> = (String, Int) -> ParseResult<A>
 
 fun <A> Parser<A>.parse(s: String) = this(s, 0)
@@ -229,7 +140,7 @@ fun readFile(filename: String): String {
 
     val inputString = inputStream
         .bufferedReader()
-        .use { it.readText() }
+        .use { bufferedReader -> bufferedReader.readText() }
 
     inputStream.close()
 
@@ -440,11 +351,11 @@ fun main() {
         fun(
             opToOpCode: Map<Int, Op>,
             opCodesRemaining: List<Int>
-        ): List<Pair<Map<Int, Op>, List<Int>>> {
-            return opCodesRemaining
+        ): List<Pair<Map<Int, Op>, List<Int>>> =
+            opCodesRemaining
                 .filter { opCode ->
                     exampleOps
-                        .filter { it.operation.opCode == opCode }
+                        .filter { exampleOp -> exampleOp.operation.opCode == opCode }
                         .all { exampleOp ->
                             exampleOp.after == op(
                                 exampleOp.before,
@@ -457,31 +368,30 @@ fun main() {
                 .map { opCode ->
                     Pair(opToOpCode.plus(Pair(opCode, op)), opCodesRemaining.minus(opCode))
                 }
-        }
 
-    fun ((Map<Int, Op>, List<Int>) -> List<Pair<Map<Int, Op>, List<Int>>>).flatMap(
+    fun ((Map<Int, Op>, List<Int>) -> List<Pair<Map<Int, Op>, List<Int>>>).apNext(
         f: (Map<Int, Op>, List<Int>) -> List<Pair<Map<Int, Op>, List<Int>>>
     ): (Map<Int, Op>, List<Int>) -> List<Pair<Map<Int, Op>, List<Int>>> =
         fun(m: Map<Int, Op>, o: List<Int>): List<Pair<Map<Int, Op>, List<Int>>> =
             this(m, o).flatMap { (m1, o1) -> f(m1, o1) }
 
     testOp(::addi)
-        .flatMap(testOp(::addr))
-        .flatMap(testOp(::muli))
-        .flatMap(testOp(::mulr))
-        .flatMap(testOp(::banr))
-        .flatMap(testOp(::bani))
-        .flatMap(testOp(::borr))
-        .flatMap(testOp(::bori))
-        .flatMap(testOp(::setr))
-        .flatMap(testOp(::seti))
-        .flatMap(testOp(::gtir))
-        .flatMap(testOp(::gtri))
-        .flatMap(testOp(::gtrr))
-        .flatMap(testOp(::eqir))
-        .flatMap(testOp(::eqri))
-        .flatMap(testOp(::eqrr))
-        .invoke(emptyMap(), listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
+        .apNext(testOp(::addr))
+        .apNext(testOp(::muli))
+        .apNext(testOp(::mulr))
+        .apNext(testOp(::banr))
+        .apNext(testOp(::bani))
+        .apNext(testOp(::borr))
+        .apNext(testOp(::bori))
+        .apNext(testOp(::setr))
+        .apNext(testOp(::seti))
+        .apNext(testOp(::gtir))
+        .apNext(testOp(::gtri))
+        .apNext(testOp(::gtrr))
+        .apNext(testOp(::eqir))
+        .apNext(testOp(::eqri))
+        .apNext(testOp(::eqrr))
+        .invoke(emptyMap(), (0..15).toList())
         .forEach { (mapping, _) ->
             operations
                 .fold(Registers(0, 0, 0, 0)) { registers, operation ->
@@ -493,6 +403,6 @@ fun main() {
                     )
                 }
                 .r0
-                .let { println(it) }
+                .let { r0 -> println("part2: $r0") }
         }
 }
