@@ -347,24 +347,35 @@ fun main() {
         .count()
         .let { x -> println("part1: $x") }
 
+    val examplesByOpCode: Map<Int, List<ExampleOp>> = exampleOps.groupBy { it.operation.opCode }
+
+    val possibleMapping: Set<Pair<Int, Op>> = ops
+        .flatMap { op ->
+            examplesByOpCode.entries
+                .flatMap { (opCode, examples) ->
+                    if (examples.all { example ->
+                            example.after == op(
+                                example.before,
+                                example.operation.in1,
+                                example.operation.in2,
+                                example.operation.out
+                            )
+                        }) {
+                        listOf(Pair(opCode, op))
+                    } else {
+                        emptyList()
+                    }
+                }
+        }
+        .toSet()
+
     fun testOp(op: Op): (Map<Int, Op>, List<Int>) -> List<Pair<Map<Int, Op>, List<Int>>> =
         fun(
             opToOpCode: Map<Int, Op>,
             opCodesRemaining: List<Int>
         ): List<Pair<Map<Int, Op>, List<Int>>> =
             opCodesRemaining
-                .filter { opCode ->
-                    exampleOps
-                        .filter { exampleOp -> exampleOp.operation.opCode == opCode }
-                        .all { exampleOp ->
-                            exampleOp.after == op(
-                                exampleOp.before,
-                                exampleOp.operation.in1,
-                                exampleOp.operation.in2,
-                                exampleOp.operation.out
-                            )
-                        }
-                }
+                .filter { opCode -> possibleMapping.contains(Pair(opCode, op)) }
                 .map { opCode ->
                     Pair(opToOpCode.plus(Pair(opCode, op)), opCodesRemaining.minus(opCode))
                 }
