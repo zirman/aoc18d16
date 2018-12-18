@@ -86,8 +86,8 @@ enum class FlowTile {
     StandingWater,
 }
 
-class FlowBoard(val xOrigin: Int, val yOrigin: Int, val width: Int, val height: Int) {
-    val tiles: Array<FlowTile> =
+data class FlowBoard(val xOrigin: Int, val yOrigin: Int, val width: Int, val height: Int) {
+    private val tiles: Array<FlowTile> =
         (generateSequence { FlowTile.Sand }).take(width * height).toList().toTypedArray()
 
     fun inBounds(x: Int, y: Int) =
@@ -102,7 +102,7 @@ class FlowBoard(val xOrigin: Int, val yOrigin: Int, val width: Int, val height: 
         return if (i >= 0 && i < tiles.size) tiles[i] else FlowTile.Sand
     }
 
-    fun rowToString(y: Int): String =
+    private fun rowToString(y: Int): String =
         (0 until width)
             .joinToString("") { x ->
                 when (tiles[y * width + x]) {

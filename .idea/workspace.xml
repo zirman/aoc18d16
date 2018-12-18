@@ -2,89 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba54bd3-962b-4b19-abe0-ea5343dc6782" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/utils/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day18.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day18/Day18.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$andThen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$apLeft$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$18.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$20.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$21.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$4$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$5$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$main$ops$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$oneOrMoreTimes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseAfter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseBefore$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseChar$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseExampleOp$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseExampleOp$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseExampleOp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseFile$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseFile$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseFile$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseLift$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOneOfChars$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$2$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$2$2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseOperation$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parsePosNum$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2$2$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2$2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseRegisters$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$parseString$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt$zeroOrMoreTimes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Day16Kt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/ExampleOp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/META-INF/aoc18d16.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/aoc18d16/META-INF/aoc18d16.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Operation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/ParseResult$Error.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/ParseResult$OK.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/ParseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/aoc18d16/Registers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,41 +17,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="150" column="43" lean-forward="true" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="237" column="28" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
+            <state relative-caret-position="708">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/day18/Day18.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Arrays.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="12371" column="3" lean-forward="true" selection-start-line="12371" selection-start-column="3" selection-end-line="12371" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Primitives.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="592" column="17" selection-start-line="592" selection-start-column="13" selection-end-line="592" selection-end-column="17" />
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day17.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -151,16 +81,19 @@
       <find>Map&lt;Op</find>
       <find>done</find>
       <find>it</find>
-      <find>Board</find>
       <find>distanceBoard</find>
       <find>makeDis</find>
       <find>water</find>
-      <find>64</find>
       <find>Int</find>
       <find>inBoun</find>
       <find>standingRight</find>
       <find>set</find>
+      <find>64</find>
+      <find>Board</find>
+      <find>adjacent</find>
+      <find>iterate</find>
       <find>println</find>
+      <find>copy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,14 +106,15 @@
         <option value="$PROJECT_DIR$/src/com/aoc18/com/aoc18/parser/Parser.kt" />
         <option value="$PROJECT_DIR$/src/aoc18/parser/Parser.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/utils/Utils.kt" />
-        <option value="$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day18/Day18.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -236,6 +170,13 @@
               <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aoc18" type="462c0819:PsiDirectoryNode" />
+              <item name="day18" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
               <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -266,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.com.aoc18.day17.Day17Kt">
+  <component name="RunManager" selected="Kotlin.com.aoc18.day18.Day18Kt">
     <configuration name="com.aoc18.day15.Day15Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="aoc18d16" />
       <option name="VM_PARAMETERS" />
@@ -306,8 +247,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.aoc18.day18.Day18Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="aoc18d16" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.aoc18.day18.Day18Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.com.aoc18.day18.Day18Kt" />
         <item itemvalue="Kotlin.com.aoc18.day17.Day17Kt" />
         <item itemvalue="Kotlin.com.aoc18.day15.Day15Kt" />
         <item itemvalue="Kotlin.com.aoc18.day16.Day16Kt" />
@@ -315,7 +270,8 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -323,13 +279,13 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7746988" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.50843376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5626506" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.5626506" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -395,17 +351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Arrays.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="-17">
+          <caret line="12371" column="3" lean-forward="true" selection-start-line="12371" selection-start-column="3" selection-end-line="12371" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -416,23 +365,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="12371" column="3" lean-forward="true" selection-start-line="12371" selection-start-column="3" selection-end-line="12371" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day17.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="237" column="28" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="28" />
+        <state relative-caret-position="708">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day15/Day15.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="150" column="43" lean-forward="true" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day18/Day18.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
         </state>
       </provider>
     </entry>

@@ -107,7 +107,6 @@ fun main() {
     val inputString = readFile("day15.txt")
     val (board, entities) = initBoard(inputString)
 
-
     val game = sequence {
         while (iterateEntities(board, entities)) {
             yield(entities)
