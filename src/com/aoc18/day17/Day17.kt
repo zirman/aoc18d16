@@ -5,7 +5,7 @@ import com.aoc18.day16.parsePosNum
 import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
 import com.aoc18.parser.andThen
-import com.aoc18.parser.apLeft
+import com.aoc18.parser.keepPrevious
 import com.aoc18.parser.orElse
 import com.aoc18.parser.parse
 import com.aoc18.parser.parseLift
@@ -76,7 +76,7 @@ val parseClayRangeX: Parser<ClayRange.ClayRangeX> =
                 }
         }
 
-val parseClayRange: Parser<ClayRange> = parseClayRangeY.orElse(parseClayRangeX).apLeft(parseEndLine)
+val parseClayRange: Parser<ClayRange> = parseClayRangeY.orElse(parseClayRangeX).keepPrevious(parseEndLine)
 val parseClayFile: Parser<List<ClayRange>> = parseClayRange.zeroOrMoreTimes()
 
 enum class FlowTile {

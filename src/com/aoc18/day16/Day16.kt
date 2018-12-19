@@ -3,7 +3,7 @@ package com.aoc18.day16
 import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
 import com.aoc18.parser.andThen
-import com.aoc18.parser.apLeft
+import com.aoc18.parser.keepPrevious
 import com.aoc18.parser.oneOrMoreTimes
 import com.aoc18.parser.parse
 import com.aoc18.parser.parseChar
@@ -48,7 +48,7 @@ val parsePosNum: Parser<Int> =
     parseDigits.andThen { digits -> digits.joinToString("").toInt().parseLift() }
 
 val parseCommaSpaces: Parser<Char> = parseChar(',')
-    .apLeft(parseSpaces)
+    .keepPrevious(parseSpaces)
 
 var parseRegisters: Parser<Registers> =
     parseChar('[')
@@ -73,7 +73,7 @@ var parseRegisters: Parser<Registers> =
 val parseBefore: Parser<Registers> =
     parseString("Before: ")
         .andThen { parseRegisters }
-        .apLeft(parseEndLine)
+        .keepPrevious(parseEndLine)
 
 val parseOperation: Parser<Operation> =
     parsePosNum
@@ -92,12 +92,12 @@ val parseOperation: Parser<Operation> =
                         }
                 }
         }
-        .apLeft(parseEndLine)
+        .keepPrevious(parseEndLine)
 
 val parseAfter: Parser<Registers> =
     parseString("After:  ")
         .andThen { parseRegisters }
-        .apLeft(parseEndLine)
+        .keepPrevious(parseEndLine)
 
 val parseExampleOp: Parser<ExampleOp> =
     parseBefore
@@ -110,14 +110,14 @@ val parseExampleOp: Parser<ExampleOp> =
                         }
                 }
         }
-        .apLeft(parseEndLine)
+        .keepPrevious(parseEndLine)
 
 val parseFile: Parser<Pair<List<ExampleOp>, List<Operation>>> =
     parseExampleOp
         .zeroOrMoreTimes()
         .andThen { exampleOps ->
             parseEndLine
-                .apLeft(parseEndLine)
+                .keepPrevious(parseEndLine)
                 .andThen { parseOperation.zeroOrMoreTimes() }
                 .andThen { operations ->
                     Pair(exampleOps, operations).parseLift()

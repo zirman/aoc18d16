@@ -29,6 +29,19 @@ fun <A> Parser<A>.orElse(parser: Parser<A>): Parser<A> =
         }
     }
 
+fun <A> List<Parser<A>>.ofThese(): Parser<A> =
+    fun(source: String, index: Int): ParseResult<A> {
+        forEach { parser ->
+            val result = parser(source, index)
+
+            if (result is ParseResult.OK) {
+                return result
+            }
+        }
+
+        return ParseResult.Error(index)
+    }
+
 fun parseString(str: String): Parser<String> =
     fun(source: String, index: Int): ParseResult<String> {
         for (j in 0 until str.length) {
@@ -125,7 +138,7 @@ fun <A> A.parseLift(): Parser<A> =
     fun(_: String, index: Int): ParseResult<A> =
         ParseResult.OK(index, this)
 
-fun <A, B> Parser<A>.apLeft(nextParser: Parser<B>) =
+fun <A, B> Parser<A>.keepPrevious(nextParser: Parser<B>) =
     fun(source: String, index: Int): ParseResult<A> {
         val result = this(source, index)
 
@@ -146,5 +159,35 @@ fun <A, B> Parser<A>.apLeft(nextParser: Parser<B>) =
 
             is ParseResult.Error ->
                 result
+        }
+    }
+
+fun <A, B> Parser<A>.map(f: (A) -> B): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> ParseResult.OK(result.index, f(result.value))
+            is ParseResult.Error -> result
+        }
+    }
+
+fun <A, B> Parser<A>.becomes(newValue: B): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> ParseResult.OK(result.index, newValue)
+            is ParseResult.Error -> result
+        }
+    }
+
+fun <A, B> Parser<A>.keepNext(parser: Parser<B>): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> parser(source, result.index)
+            is ParseResult.Error -> result
         }
     }
