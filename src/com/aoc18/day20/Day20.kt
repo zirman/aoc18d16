@@ -62,6 +62,7 @@ val parseFile: Parser<Group> =
         .keepNext(parseGroup)
         .map { Group.SubGroups(it) }
         .keepPrevious(parseChar('$'))
+        .keepPrevious(parseChar('\n'))
 
 enum class HouseTile {
     Wall,
@@ -176,15 +177,11 @@ class DistanceGrid(val rect: Rect) {
     operator fun get(pos: Pos): Int? = tiles[posToOrdinal(pos, rect)]
 }
 
-fun main() {
-    val file = readFile("day20.txt")
-    val result = parseFile.parse(file)
-    result as ParseResult.OK
-
+fun makeHouseGrid(group: Group): HouseGrid {
     val houseGrid = HouseGrid()
     houseGrid[Pos(0, 0)] = HouseTile.Floor
 
-    fun traverse(group: Group, pos: Pos): Set<Pos> =
+    fun traversePaths(group: Group, pos: Pos): Set<Pos> =
         when (group) {
             is Group.Directions -> {
                 var newPos = pos
@@ -200,30 +197,24 @@ fun main() {
             }
 
             is Group.SubGroups -> {
-                val po = mutableSetOf<Pos>()
-
                 group.groups
-                    .forEach { andGroups ->
-                        var pos1: Set<Pos> = mutableSetOf(pos)
-
-                        andGroups
-                            .forEach { group ->
-                                pos1.toList().forEach { p ->
-                                    pos1 = traverse(group, p)
+                    .fold(emptySet()) { acc, andGroups ->
+                        acc.plus(
+                            andGroups
+                                .fold(setOf(pos)) { acc2, group ->
+                                    acc2.flatMap { p -> traversePaths(group, p) }
+                                        .toSet()
                                 }
-                            }
-
-                        po.addAll(pos1)
+                        )
                     }
-
-                po
             }
         }
 
-    traverse(result.value, Pos(0, 0))
-    println(houseGrid)
-    println("part1: ${distanceGrid.tiles.filterNotNull().max()}")
+    traversePaths(group, Pos(0, 0))
+    return houseGrid
+}
 
+fun makeDistanceGrid(houseGrid: HouseGrid): DistanceGrid {
     val distanceGrid = DistanceGrid(houseGrid.rect)
 
     fun traverseHouse(pos: Pos, distance: Int) {
@@ -256,7 +247,17 @@ fun main() {
     }
 
     traverseHouse(Pos(0, 0), 0)
+    return distanceGrid
+}
 
-
-    println("part2: ${distanceGrid.tiles.filterNotNull().filter { it >= 1000 }.count()}")
+fun main() {
+    val file = readFile("day20.txt")
+    val result = parseFile.parse(file)
+    result as ParseResult.OK
+    val houseGrid = makeHouseGrid(result.value)
+    println(houseGrid)
+    val distanceGrid = makeDistanceGrid(houseGrid)
+    val distances = distanceGrid.tiles.filterNotNull()
+    println("part1: ${distances.max()}")
+    println("part2: ${distances.filter { it >= 1000 }.count()}")
 }
