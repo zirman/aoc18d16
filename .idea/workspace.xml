@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba54bd3-962b-4b19-abe0-ea5343dc6782" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day22/Day22.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,17 +20,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="-2753">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/day22/Day22.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Maps.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="1263" column="22" lean-forward="true" selection-start-line="1263" selection-start-column="22" selection-end-line="1263" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="291" column="50" lean-forward="true" selection-start-line="291" selection-start-column="50" selection-end-line="291" selection-end-column="50" />
+            <state relative-caret-position="261">
+              <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -44,8 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\n</find>
-      <find>Example</find>
       <find>Register</find>
       <find>Map&lt;Op</find>
       <find>done</find>
@@ -72,8 +99,10 @@
       <find>zeroO</find>
       <find>oneOrMore</find>
       <find>Directions</find>
-      <find>println</find>
       <find>mutable</find>
+      <find>println</find>
+      <find>geo</find>
+      <find>time</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,7 +126,10 @@
         <option value="$PROJECT_DIR$/day20.bak" />
         <option value="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" />
         <option value="$PROJECT_DIR$/day20.txt" />
+        <option value="$PROJECT_DIR$/day21.txt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day22/Day22.kt" />
       </list>
     </option>
   </component>
@@ -184,6 +216,13 @@
               <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aoc18" type="462c0819:PsiDirectoryNode" />
+              <item name="day22" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
               <item name="genparser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -230,33 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.com.aoc18.day20.Day20Kt">
-    <configuration name="com.aoc18.day15.Day15Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="aoc18d16" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.aoc18.day15.Day15Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.aoc18.day17.Day17Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="aoc18d16" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.aoc18.day17.Day17Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.com.aoc18.day22.Day22Kt">
     <configuration name="com.aoc18.day18.Day18Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="aoc18d16" />
       <option name="VM_PARAMETERS" />
@@ -296,20 +309,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.aoc18.day21.Day21Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="aoc18d16" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.aoc18.day21.Day21Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.aoc18.day22.Day22Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="aoc18d16" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.aoc18.day22.Day22Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Kotlin.com.aoc18.day15.Day15Kt" />
-      <item itemvalue="Kotlin.com.aoc18.day17.Day17Kt" />
       <item itemvalue="Kotlin.com.aoc18.day18.Day18Kt" />
       <item itemvalue="Kotlin.com.aoc18.day19.Day19Kt" />
       <item itemvalue="Kotlin.com.aoc18.day20.Day20Kt" />
+      <item itemvalue="Kotlin.com.aoc18.day21.Day21Kt" />
+      <item itemvalue="Kotlin.com.aoc18.day22.Day22Kt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.com.aoc18.day22.Day22Kt" />
         <item itemvalue="Kotlin.com.aoc18.day20.Day20Kt" />
+        <item itemvalue="Kotlin.com.aoc18.day21.Day21Kt" />
         <item itemvalue="Kotlin.com.aoc18.day19.Day19Kt" />
         <item itemvalue="Kotlin.com.aoc18.day18.Day18Kt" />
-        <item itemvalue="Kotlin.com.aoc18.day17.Day17Kt" />
-        <item itemvalue="Kotlin.com.aoc18.day15.Day15Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +362,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4982382" weight="0.56506026" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4982382" weight="0.39518073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -339,13 +378,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Maps.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -420,13 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -497,17 +522,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt">
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="219" lean-forward="true" selection-start-line="18" selection-end-line="219" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day22.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day21.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2753">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="291" column="50" lean-forward="true" selection-start-line="291" selection-start-column="50" selection-end-line="291" selection-end-column="50" />
+        <state relative-caret-position="261">
+          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Maps.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1263" column="22" lean-forward="true" selection-start-line="1263" selection-start-column="22" selection-end-line="1263" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day22/Day22.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
         </state>
       </provider>
     </entry>

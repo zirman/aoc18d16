@@ -71,7 +71,7 @@ enum class HouseTile {
     Floor
 }
 
-data class Rect(val xMin: Int, val xMax: Int, val yMin: Int, val yMax: Int)
+data class Bounds(val xMin: Int, val xMax: Int, val yMin: Int, val yMax: Int)
 data class Pos(val x: Int, val y: Int)
 
 fun movePos(direction: Direction, pos: Pos): Pos =
@@ -88,22 +88,22 @@ fun directionDoor(direction: Direction): HouseTile =
         Direction.East, Direction.West -> HouseTile.WEDoor
     }
 
-fun ordinals(rect: Rect): Int = width(rect) * height(rect)
-fun width(rect: Rect): Int = rect.xMax - rect.xMin + 1
-fun height(rect: Rect): Int = rect.yMax - rect.yMin + 1
+fun ordinals(rect: Bounds): Int = width(rect) * height(rect)
+fun width(rect: Bounds): Int = rect.xMax - rect.xMin + 1
+fun height(rect: Bounds): Int = rect.yMax - rect.yMin + 1
 
-fun posToOrdinal(pos: Pos, rect: Rect): Int =
+fun posToOrdinal(pos: Pos, rect: Bounds): Int =
     ((pos.y - rect.yMin) * width(rect)) + (pos.x - rect.xMin)
 
-fun ordinalToPos(ordinal: Int, rect: Rect): Pos {
+fun ordinalToPos(ordinal: Int, rect: Bounds): Pos {
     val wd = width(rect)
     return Pos(x = (ordinal % wd) + rect.xMin, y = (ordinal / wd) + rect.yMin)
 }
 
-fun contains(pos: Pos, rect: Rect): Boolean =
+fun contains(pos: Pos, rect: Bounds): Boolean =
     pos.x >= rect.xMin && pos.x <= rect.xMax && pos.y >= rect.yMin && pos.y <= rect.yMax
 
-fun addPoint(rect: Rect, pos: Pos): Rect =
+fun addPoint(rect: Bounds, pos: Pos): Bounds =
     rect.copy(
         xMin = Math.min(rect.xMin, pos.x),
         xMax = Math.max(rect.xMax, pos.x),
@@ -112,7 +112,7 @@ fun addPoint(rect: Rect, pos: Pos): Rect =
     )
 
 class HouseGrid {
-    var rect: Rect = Rect(0, 0, 0, 0)
+    var rect: Bounds = Bounds(0, 0, 0, 0)
 
     private var tiles: Array<HouseTile> =
         (generateSequence { HouseTile.Wall }).take(ordinals(rect)).toList().toTypedArray()
@@ -167,7 +167,7 @@ class HouseGrid {
         (rect.yMin - 1..rect.yMax + 1).joinToString("\n") { y -> rowToString(y) }
 }
 
-class DistanceGrid(val rect: Rect) {
+class DistanceGrid(val rect: Bounds) {
     val tiles: Array<Int?> = arrayOfNulls(ordinals(rect))
 
     operator fun set(pos: Pos, distance: Int) {
