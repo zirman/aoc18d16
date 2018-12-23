@@ -63,6 +63,12 @@ fun parseString(str: String): Parser<String> =
         return ParseResult.OK(index + str.length, str)
     }
 
+fun <A : Any> Parser<A>.zeroOrOneTime(): Parser<A?> =
+    fun(source: String, index: Int): ParseResult<A?> =
+        this(source, index)
+            .let { it as? ParseResult.OK }
+            ?: ParseResult.OK(index, null)
+
 fun <A> Parser<A>.zeroOrMoreTimes(): Parser<List<A>> =
     fun(source: String, index: Int): ParseResult<List<A>> {
         val results = mutableListOf<A>()
