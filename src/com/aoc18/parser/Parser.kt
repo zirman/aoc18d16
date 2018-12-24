@@ -250,3 +250,12 @@ fun <A, B> Parser<A>.keepNext(parser: Parser<B>): Parser<B> =
             is ParseResult.Error -> result
         }
     }
+
+val parseDigits: Parser<List<Char>> = parseOneOfChars("0123456789")
+    .oneOrMoreTimes()
+
+val parsePosInt: Parser<Int> =
+    parseDigits.andThen { digits -> digits.joinToString("").toInt().parseLift() }
+
+val parsePosLong: Parser<Long> =
+    parseDigits.andThen { digits -> digits.joinToString("").toLong().parseLift() }

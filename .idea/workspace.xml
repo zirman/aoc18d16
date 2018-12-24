@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba54bd3-962b-4b19-abe0-ea5343dc6782" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day23.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day23.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24.foo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,19 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="127" column="18" lean-forward="true" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Sets.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="139" column="56" lean-forward="true" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
+            <state relative-caret-position="269">
+              <caret line="202" column="50" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -38,16 +34,54 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="388" column="3" lean-forward="true" selection-start-line="388" selection-start-column="3" selection-end-line="388" selection-end-column="3" />
+            <state relative-caret-position="478">
+              <caret line="585" column="2" lean-forward="true" selection-start-line="585" selection-start-column="2" selection-end-line="585" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day23.txt">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Collections.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14613" />
+            <state relative-caret-position="251">
+              <caret line="1410" column="67" selection-start-line="1410" selection-start-column="61" selection-end-line="1410" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/TypeAliases.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Comparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="117" column="56" lean-forward="true" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day24.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="678">
+              <caret line="257" column="65" selection-start-line="257" selection-start-column="65" selection-end-line="257" selection-end-column="65" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -62,12 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>inBoun</find>
-      <find>standingRight</find>
-      <find>set</find>
-      <find>64</find>
-      <find>Board</find>
-      <find>adjacent</find>
       <find>iterate</find>
       <find>copy</find>
       <find>parseFile</find>
@@ -81,7 +109,6 @@
       <find>oneOrMore</find>
       <find>Directions</find>
       <find>mutable</find>
-      <find>println</find>
       <find>geo</find>
       <find>time</find>
       <find>Int</find>
@@ -90,8 +117,15 @@
       <find>parseChar</find>
       <find>zeroOr</find>
       <find>: Any</find>
-      <find>Long</find>
       <find>distance</find>
+      <find>val parsePosLong</find>
+      <find>Compar</find>
+      <find>Long</find>
+      <find>plus</find>
+      <find>remove</find>
+      <find>: Set&lt;</find>
+      <find>println</find>
+      <find>initiative</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,24 +144,28 @@
         <option value="$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt" />
         <option value="$PROJECT_DIR$/day19.bak" />
         <option value="$PROJECT_DIR$/day19.txt" />
-        <option value="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/genparser/GenParser.kt" />
         <option value="$PROJECT_DIR$/day20.bak" />
         <option value="$PROJECT_DIR$/day20.txt" />
         <option value="$PROJECT_DIR$/day21.txt" />
-        <option value="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day22/Day22.kt" />
         <option value="$PROJECT_DIR$/day22.txt" />
-        <option value="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" />
         <option value="$PROJECT_DIR$/day23.txt" />
         <option value="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" />
+        <option value="$PROJECT_DIR$/day24.txt" />
+        <option value="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="23" />
+    <option name="width" value="1375" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -159,70 +197,14 @@
               <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day15" type="462c0819:PsiDirectoryNode" />
+              <item name="day23" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
               <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day16" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day17" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day18" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day19" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day20" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="day21" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="genparser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aoc18d16" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aoc18d16" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="aoc18" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="day24" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -254,20 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.com.aoc18.day23.Day23Kt">
-    <configuration name="com.aoc18.day19.Day19Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="aoc18d16" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.aoc18.day19.Day19Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.com.aoc18.day24.Day24Kt">
     <configuration name="com.aoc18.day20.Day20Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="aoc18d16" />
       <option name="VM_PARAMETERS" value="" />
@@ -309,7 +278,7 @@
     </configuration>
     <configuration name="com.aoc18.day23.Day23Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="aoc18d16" />
-      <option name="VM_PARAMETERS" value="-Xss8m" />
+      <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -320,42 +289,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.aoc18.day24.Day24Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="aoc18d16" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.aoc18.day24.Day24Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Kotlin.com.aoc18.day19.Day19Kt" />
       <item itemvalue="Kotlin.com.aoc18.day20.Day20Kt" />
       <item itemvalue="Kotlin.com.aoc18.day21.Day21Kt" />
       <item itemvalue="Kotlin.com.aoc18.day22.Day22Kt" />
       <item itemvalue="Kotlin.com.aoc18.day23.Day23Kt" />
+      <item itemvalue="Kotlin.com.aoc18.day24.Day24Kt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.com.aoc18.day24.Day24Kt" />
         <item itemvalue="Kotlin.com.aoc18.day23.Day23Kt" />
         <item itemvalue="Kotlin.com.aoc18.day22.Day22Kt" />
         <item itemvalue="Kotlin.com.aoc18.day20.Day20Kt" />
         <item itemvalue="Kotlin.com.aoc18.day21.Day21Kt" />
-        <item itemvalue="Kotlin.com.aoc18.day19.Day19Kt" />
       </list>
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="23" width="1375" height="877" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25299507" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26514032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4982382" visible="true" weight="0.39518073" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4982382" weight="0.40636942" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30963856" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30828026" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5017618" side_tool="true" weight="0.3493976" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32771084" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32738853" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24964234" />
@@ -479,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="219" lean-forward="true" selection-start-line="18" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/day22.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -535,34 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2753">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="388" column="3" lean-forward="true" selection-start-line="388" selection-start-column="3" selection-end-line="388" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Sets.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -575,17 +521,80 @@
         <state relative-caret-position="-14613" />
       </provider>
     </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Collections.kt">
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="902" column="1" lean-forward="true" selection-start-line="902" selection-start-column="1" selection-end-line="902" selection-end-column="1" />
+        <state relative-caret-position="365">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt">
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="127" column="18" lean-forward="true" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+        <state relative-caret-position="189">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/TypeAliases.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="117" column="56" lean-forward="true" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="257" column="65" selection-start-line="257" selection-start-column="65" selection-end-line="257" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="1410" column="67" selection-start-line="1410" selection-start-column="61" selection-end-line="1410" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="585" column="2" lean-forward="true" selection-start-line="585" selection-start-column="2" selection-end-line="585" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day24.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="202" column="50" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
         </state>
       </provider>
     </entry>

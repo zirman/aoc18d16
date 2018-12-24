@@ -1,6 +1,5 @@
 package com.aoc18.day21
 
-import com.aoc18.day16.parseDigits
 import com.aoc18.day16.parseEndLine
 import com.aoc18.day16.parseSpace
 import com.aoc18.parser.ParseResult
@@ -12,7 +11,7 @@ import com.aoc18.parser.map
 import com.aoc18.parser.ofThese
 import com.aoc18.parser.oneOrMoreTimes
 import com.aoc18.parser.parse
-import com.aoc18.parser.parseLift
+import com.aoc18.parser.parsePosLong
 import com.aoc18.parser.parseString
 import com.aoc18.utils.readFile
 
@@ -116,9 +115,6 @@ enum class Operation(val f: (Registers, Long, Long, Long) -> Registers) {
 
 data class Instruction(val operation: Operation, val in1: Long, val in2: Long, val out: Long)
 data class File(val instructionPointer: Long, val instructions: List<Instruction>)
-
-val parsePosLong: Parser<Long> =
-    parseDigits.andThen { digits -> digits.joinToString("").toLong().parseLift() }
 
 val parseInstruction: Parser<Instruction> =
     listOf(

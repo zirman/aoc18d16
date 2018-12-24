@@ -38,14 +38,8 @@ fun cornersNanobot(nanobot: Nanobot): List<Pos> =
         nanobot.pos.copy(z = nanobot.pos.z + nanobot.radius)
     )
 
-fun notVisited(visited: Set<Pos>, pos: Pos): Unit? =
-    if (visited.contains(pos).not()) Unit else null
-
 fun posInRange(nanobot: Nanobot, pos: Pos): Boolean =
     distancePos(pos, nanobot.pos) <= nanobot.radius
-
-fun touchingNanobot(bot1: Nanobot, bot2: Nanobot): Boolean =
-    distancePos(bot1.pos, bot2.pos) <= bot1.radius + bot2.radius
 
 fun overlappingNanobot(bot1: Nanobot, bot2: Nanobot): List<Pos> {
     fun floodFill(pos1: Pos, filled: Set<Pos>): Set<Pos> {
@@ -108,9 +102,6 @@ val parseNanoBotFile: Parser<List<Nanobot>> =
 
 fun distancePos(pos1: Pos, pos2: Pos): Int =
     Math.abs(pos1.x - pos2.x) + Math.abs(pos1.y - pos2.y) + Math.abs(pos1.z - pos2.z)
-
-fun touchingGroup(nanobot: Nanobot, nanobots: Set<Nanobot>): Boolean =
-    nanobots.contains(nanobot).not() && nanobots.all { touchingNanobot(it, nanobot) }
 
 fun main() {
     val file = readFile("day23.txt")
