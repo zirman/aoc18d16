@@ -164,12 +164,11 @@ fun effectiveDamage(defendingArmyUnit: ArmyUnit, attackingArmyUnit: ArmyUnit): I
             effectivePower(attackingArmyUnit)
     }
 
-fun main() {
-    val file = readFile("day24.txt")
-    val result = parseBiology.parse(file)
-    result as ParseResult.OK
-    val (initialImmuneSystem, initialInfection) = result.value
-
+fun runSimuation(
+    initialImmuneSystem: List<ArmyUnit>,
+    initialInfection: List<ArmyUnit>,
+    boost: Int
+): Pair<Array<ArmyUnit>, Array<ArmyUnit>> {
     val precedence = Comparator<ArmyUnit> { a, b ->
         val diff = effectivePower(b) - effectivePower(a)
         if (diff != 0) diff else b.initiative - a.initiative
@@ -181,73 +180,89 @@ fun main() {
         armyUnit.attackingUnitId = null
     }
 
+    val immuneSystemArmyUnits = initialImmuneSystem
+        .map { it.copy(attackDamage = it.attackDamage + boost) }
+        .toTypedArray()
+
+    val infectionArmyUnits = initialInfection.map { it.copy() }.toTypedArray()
+
+    fun allArmyUnits(): List<ArmyUnit> =
+        listOf(immuneSystemArmyUnits.toList(), infectionArmyUnits.toList()).flatten()
+
+    fun enemyArmyUnits(armyUnit: ArmyUnit): Array<ArmyUnit> =
+        when (armyUnit.army) {
+            Army.ImmuneSystem -> infectionArmyUnits
+            Army.Infection -> immuneSystemArmyUnits
+        }
+
+    while (immuneSystemArmyUnits.any { it.size > 0 } && infectionArmyUnits.any { it.size > 0 }) {
+        val immuneSize = immuneSystemArmyUnits.sumBy { it.size }
+        val infectionSize = infectionArmyUnits.sumBy { it.size }
+
+        immuneSystemArmyUnits.forEachIndexed(::resetArmyUnit)
+        infectionArmyUnits.forEachIndexed(::resetArmyUnit)
+
+        for (attackingArmyUnit in allArmyUnits().filter { it.size > 0 }.sortedWith(precedence)) {
+            enemyArmyUnits(attackingArmyUnit)
+                .filter { it.size > 0 && it.isDefending.not() }
+                .minWith(Comparator { a, b ->
+                    val diff =
+                        effectiveDamage(b, attackingArmyUnit) - effectiveDamage(
+                            a,
+                            attackingArmyUnit
+                        )
+
+                    if (diff != 0) diff else precedence.compare(a, b)
+                })
+                ?.let { target ->
+                    if (effectiveDamage(target, attackingArmyUnit) > 0) {
+                        attackingArmyUnit.attackingUnitId = target.unitId
+                        target.isDefending = true
+                    }
+                }
+        }
+
+        for (attackingArmyUnit in allArmyUnits().sortedBy { -it.initiative }) {
+            if (attackingArmyUnit.size > 0) {
+                attackingArmyUnit.attackingUnitId
+                    ?.let { unitId ->
+                        val target = enemyArmyUnits(attackingArmyUnit)[unitId]
+
+                        target.size = Math.max(
+                            target.size - (effectiveDamage(
+                                target,
+                                attackingArmyUnit
+                            ) / target.hitPoints),
+                            0
+                        )
+                    }
+            }
+        }
+
+        if (immuneSize == immuneSystemArmyUnits.sumBy { it.size } &&
+            infectionSize == infectionArmyUnits.sumBy { it.size }) {
+            break
+        }
+    }
+
+    return Pair(immuneSystemArmyUnits, infectionArmyUnits)
+}
+
+fun main() {
+    val file = readFile("day24.txt")
+    val result = parseBiology.parse(file)
+    result as ParseResult.OK
+    val (initialImmuneSystem, initialInfection) = result.value
+
+    run {
+        val (_, infectionArmyUnits) = runSimuation(initialImmuneSystem, initialInfection, 0)
+        println("part1: ${infectionArmyUnits.sumBy { it.size }}")
+    }
+
     var boost = 1
 
     while (true) {
-        val immuneSystemArmyUnits = initialImmuneSystem
-            .map { it.copy(attackDamage = it.attackDamage + boost) }
-            .toTypedArray()
-
-        val infectionArmyUnits = initialInfection.map { it.copy() }.toTypedArray()
-
-        fun allArmyUnits(): List<ArmyUnit> =
-            listOf(immuneSystemArmyUnits.toList(), infectionArmyUnits.toList()).flatten()
-
-        fun enemyArmyUnits(armyUnit: ArmyUnit): Array<ArmyUnit> =
-            when (armyUnit.army) {
-                Army.ImmuneSystem -> infectionArmyUnits
-                Army.Infection -> immuneSystemArmyUnits
-            }
-
-        while (immuneSystemArmyUnits.any { it.size > 0 } && infectionArmyUnits.any { it.size > 0 }) {
-            val immuneSize = immuneSystemArmyUnits.sumBy { it.size }
-            val infectionSize = infectionArmyUnits.sumBy { it.size }
-
-            immuneSystemArmyUnits.forEachIndexed(::resetArmyUnit)
-            infectionArmyUnits.forEachIndexed(::resetArmyUnit)
-
-            for (attackingArmyUnit in allArmyUnits().filter { it.size > 0 }.sortedWith(precedence)) {
-                enemyArmyUnits(attackingArmyUnit)
-                    .filter { it.size > 0 && it.isDefending.not() }
-                    .minWith(Comparator { a, b ->
-                        val diff =
-                            effectiveDamage(b, attackingArmyUnit) - effectiveDamage(
-                                a,
-                                attackingArmyUnit
-                            )
-
-                        if (diff != 0) diff else precedence.compare(a, b)
-                    })
-                    ?.let { target ->
-                        if (effectiveDamage(target, attackingArmyUnit) > 0) {
-                            attackingArmyUnit.attackingUnitId = target.unitId
-                            target.isDefending = true
-                        }
-                    }
-            }
-
-            for (attackingArmyUnit in allArmyUnits().sortedBy { -it.initiative }) {
-                if (attackingArmyUnit.size > 0) {
-                    attackingArmyUnit.attackingUnitId
-                        ?.let { unitId ->
-                            val target = enemyArmyUnits(attackingArmyUnit)[unitId]
-
-                            target.size = Math.max(
-                                target.size - (effectiveDamage(
-                                    target,
-                                    attackingArmyUnit
-                                ) / target.hitPoints),
-                                0
-                            )
-                        }
-                }
-            }
-
-            if (immuneSize == immuneSystemArmyUnits.sumBy { it.size } &&
-                infectionSize == infectionArmyUnits.sumBy { it.size }) {
-                break
-            }
-        }
+        val (immuneSystemArmyUnits, infectionArmyUnits) = runSimuation(initialImmuneSystem, initialInfection, boost)
 
         if (infectionArmyUnits.sumBy { it.size } == 0) {
             println("part2: ${immuneSystemArmyUnits.sumBy { it.size }}")

@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba54bd3-962b-4b19-abe0-ea5343dc6782" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day24.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day24.foo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day24.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day23.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="202" column="50" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
+            <state relative-caret-position="203">
+              <caret line="247" column="57" selection-start-line="247" selection-start-column="57" selection-end-line="247" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -321,6 +313,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="23" width="1375" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26514032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -336,7 +329,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.30828026" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5017618" side_tool="true" weight="0.3493976" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32738853" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32738853" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24964234" />
@@ -593,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="202" column="50" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
+        <state relative-caret-position="203">
+          <caret line="247" column="57" selection-start-line="247" selection-start-column="57" selection-end-line="247" selection-end-column="57" />
         </state>
       </provider>
     </entry>
