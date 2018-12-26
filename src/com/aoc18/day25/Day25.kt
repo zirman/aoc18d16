@@ -1,8 +1,8 @@
 package com.aoc18.day25
 
 import com.aoc18.day16.parseEndLine
-import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
+import com.aoc18.parser.Result
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepNext
 import com.aoc18.parser.keepPrevious
@@ -14,9 +14,6 @@ import com.aoc18.parser.zeroOrMoreTimes
 import com.aoc18.utils.readFile
 
 data class Point(val x: Int, val y: Int, val z: Int, val w: Int)
-
-fun Point.distance(point: Point): Int =
-    Math.abs(x - point.x) + Math.abs(y - point.y) + Math.abs(z - point.z) + Math.abs(w - point.w)
 
 val parsePoint: Parser<Point> =
     parseInt
@@ -71,7 +68,7 @@ data class SpaceTime(val bounds: Bounds) {
 fun main() {
     val file = readFile("day25.txt")
     val result = parsePointFile.parse(file)
-    result as ParseResult.OK
+    result as Result.Ok
     val points = result.value
 
     val spaceTime =
@@ -135,15 +132,3 @@ fun main() {
 
     println(count)
 }
-
-// 0123456789
-//0 1  1
-//1101101
-//2 1  1
-//3
-//4
-//5
-//6
-//7
-//8
-//9

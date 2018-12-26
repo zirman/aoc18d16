@@ -1,7 +1,7 @@
 package com.aoc18.day16
 
-import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
+import com.aoc18.parser.Result
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepPrevious
 import com.aoc18.parser.oneOrMoreTimes
@@ -176,7 +176,7 @@ fun main() {
     val file = readFile("day16.txt")
 
     val result = parseFile.parse(file)
-    result as ParseResult.OK
+    result as Result.Ok
 
     val (exampleOps, operations) = result.value
 

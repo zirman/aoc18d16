@@ -2,8 +2,8 @@ package com.aoc18.day21
 
 import com.aoc18.day16.parseEndLine
 import com.aoc18.day16.parseSpace
-import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
+import com.aoc18.parser.Result
 import com.aoc18.parser.andThen
 import com.aoc18.parser.becomes
 import com.aoc18.parser.keepPrevious
@@ -184,7 +184,7 @@ fun main() {
     val file = readFile("day21.txt")
 
     val result = parseFile.parse(file)
-    result as ParseResult.OK
+    result as Result.Ok
     println(result.value)
 
 

@@ -1,8 +1,8 @@
 package com.aoc18.day24
 
 import com.aoc18.day16.parseEndLine
-import com.aoc18.parser.ParseResult
 import com.aoc18.parser.Parser
+import com.aoc18.parser.Result
 import com.aoc18.parser.andThen
 import com.aoc18.parser.becomes
 import com.aoc18.parser.keepNext
@@ -77,12 +77,12 @@ val parseDamageModifiers: Parser<Pair<List<DamageType>, List<DamageType>>> =
         .keepPrevious(parseString(") "))
         .zeroOrOneTime()
         .map { damageModifiers ->
-            if (damageModifiers != null) {
+            if (damageModifiers.isPresent) {
                 val weaknessModifiers: List<DamageModifier.Weakness> =
-                    damageModifiers.flatMap { if (it is DamageModifier.Weakness) listOf(it) else emptyList() }
+                    damageModifiers.get().flatMap { if (it is DamageModifier.Weakness) listOf(it) else emptyList() }
 
                 val immunityModifiers: List<DamageModifier.Immunity> =
-                    damageModifiers.flatMap { if (it is DamageModifier.Immunity) listOf(it) else emptyList() }
+                    damageModifiers.get().flatMap { if (it is DamageModifier.Immunity) listOf(it) else emptyList() }
 
                 Pair(
                     weaknessModifiers.flatMap { it.damageTypes },
@@ -246,7 +246,7 @@ fun runSimuation(
 fun main() {
     val file = readFile("day24.txt")
     val result = parseBiology.parse(file)
-    result as ParseResult.OK
+    result as Result.Ok
     val (initialImmuneSystem, initialInfection) = result.value
 
     run {
