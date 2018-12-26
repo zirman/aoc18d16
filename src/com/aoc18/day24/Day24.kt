@@ -41,13 +41,8 @@ data class ArmyUnit(
 )
 
 sealed class Army {
-    object ImmuneSystem : Army() {
-        override fun toString(): String = "Army.ImmuneSystem"
-    }
-
-    object Infection : Army() {
-        override fun toString(): String = "Army.Infection"
-    }
+    object ImmuneSystem : Army()
+    object Infection : Army()
 }
 
 sealed class DamageModifier {
@@ -262,7 +257,11 @@ fun main() {
     var boost = 1
 
     while (true) {
-        val (immuneSystemArmyUnits, infectionArmyUnits) = runSimuation(initialImmuneSystem, initialInfection, boost)
+        val (immuneSystemArmyUnits, infectionArmyUnits) = runSimuation(
+            initialImmuneSystem,
+            initialInfection,
+            boost
+        )
 
         if (infectionArmyUnits.sumBy { it.size } == 0) {
             println("part2: ${immuneSystemArmyUnits.sumBy { it.size }}")

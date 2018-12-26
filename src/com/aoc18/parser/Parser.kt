@@ -257,5 +257,15 @@ val parseDigits: Parser<List<Char>> = parseOneOfChars("0123456789")
 val parsePosInt: Parser<Int> =
     parseDigits.andThen { digits -> digits.joinToString("").toInt().parseLift() }
 
+val parseInt: Parser<Int> =
+    parseChar('-')
+        .zeroOrOneTime()
+        .andThen { signPrefix ->
+            parseDigits
+                .andThen { digits ->
+                    digits.joinToString("", signPrefix?.let { "-" } ?: "").toInt().parseLift()
+                }
+        }
+
 val parsePosLong: Parser<Long> =
     parseDigits.andThen { digits -> digits.joinToString("").toLong().parseLift() }
