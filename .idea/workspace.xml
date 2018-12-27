@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba54bd3-962b-4b19-abe0-ea5343dc6782" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/aoc18/jsonParser/JsonParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day16/Day16.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day17/Day17.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day19/Day19.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day20/Day20.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day21/Day21.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day23/Day23.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day24/Day24.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/day25/Day25.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/day25/Day25.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/genparser/GenParser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/parser/Parser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aoc18/jsonParser/JsonParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aoc18/jsonParser/JsonParser.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/aoc18/jsonParser/JsonParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="242" column="35" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
+            <state relative-caret-position="230">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
@@ -287,7 +276,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545860172391" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545917233193" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -409,7 +398,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4982382" weight="0.4060241" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4982382" visible="true" weight="0.4060241" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -697,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aoc18/jsonParser/JsonParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="242" column="35" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
+        <state relative-caret-position="230">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>
