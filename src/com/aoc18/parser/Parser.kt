@@ -1,245 +1,254 @@
 package com.aoc18.parser
 
-import java.util.Optional
+typealias Parser<A> = (String, Int) -> ParseResult<A>
 
-sealed class Result<out A, out E> {
-    data class Ok<out A>(val value: A) : Result<A, Nothing>()
-    data class Err<out E>(val error: E) : Result<Nothing, E>()
+fun <A> Parser<A>.parse(s: String) = this(s, 0)
+
+sealed class ParseResult<out A> {
+    data class OK<out A>(val index: Int, val value: A) : ParseResult<A>()
+    data class Error(val index: Int) : ParseResult<Nothing>()
 }
 
-typealias Parser<A> = (String, MutIndex) -> A?
+fun <A> fixPoint(f: (Parser<A>) -> Parser<A>): Parser<A> =
+    fun(source: String, index: Int): ParseResult<A> =
+        f(fixPoint(f)).invoke(source, index)
 
-data class MutIndex(var start: Int)
+fun <A, B> Parser<A>.andThen(f: (A) -> Parser<B>): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
 
-fun <A : Any> Parser<A>.parse(s: String): Result<A, Int> {
-    val index = MutIndex(0)
-    val value = this(s, index)
-
-    return if (value != null && index.start == s.length) {
-        Result.Ok(value)
-    } else {
-        Result.Err(index.start)
+        return when (result) {
+            is ParseResult.OK -> f(result.value).invoke(source, result.index)
+            is ParseResult.Error -> result
+        }
     }
-}
-
-fun <A : Any> fixPoint(f: (Parser<A>) -> Parser<A>): Parser<A> =
-    fun(source: String, mutIndex: MutIndex): A? =
-        f(fixPoint(f)).invoke(source, mutIndex)
-
-fun <A : Any, B : Any> Parser<A>.andThen(f: (A) -> Parser<B>): Parser<B> =
-    fun(source: String, mutIndex: MutIndex): B? =
-        this(source, mutIndex)?.let(f)?.invoke(source, mutIndex)
 
 fun <A> Parser<A>.orElse(parser: Parser<A>): Parser<A> =
-    fun(source: String, mutIndex: MutIndex): A? {
-        val start = mutIndex.start
+    fun(source: String, index: Int): ParseResult<A> {
+        val result = this(source, index)
 
-        return this(source, mutIndex)
-            ?: run {
-                mutIndex.start = start
-                parser(source, mutIndex)
-            }
+        return when (result) {
+            is ParseResult.OK -> result
+            is ParseResult.Error -> parser(source, index)
+        }
     }
 
 fun <A> List<Parser<A>>.ofThese(): Parser<A> =
-    fun(source: String, mutIndex: MutIndex): A? {
-        val start = mutIndex.start
+    fun(source: String, index: Int): ParseResult<A> {
+        forEach { parser ->
+            val result = parser(source, index)
 
-        for (parser in this) {
-            mutIndex.start = start
-            parser(source, mutIndex)?.let { return it }
+            if (result is ParseResult.OK) {
+                return result
+            }
         }
 
-        return null
+        return ParseResult.Error(index)
     }
 
 fun parseString(str: String): Parser<String> =
-    fun(source: String, mutIndex: MutIndex): String? {
-        val start = mutIndex.start
+    fun(source: String, index: Int): ParseResult<String> {
+        for (j in 0 until str.length) {
+            val k = index + j
 
-        for (i in 0 until str.length) {
-            val j = start + i
-
-            if (j >= source.length) {
-                return null
+            if (k >= source.length) {
+                return ParseResult.Error(k)
             }
 
-            if (source[j] != str[i]) {
-                return null
+            if (source[k] != str[j]) {
+                return ParseResult.Error(k)
             }
         }
 
-        mutIndex.start = start + str.length
-        return str
+        return ParseResult.OK(index + str.length, str)
     }
 
-fun <A : Any> Parser<A>.zeroOrOneTime(): Parser<Optional<A>?> =
-    fun(source: String, mutIndex: MutIndex): Optional<A>? {
-        val start = mutIndex.start
-        val value = this(source, mutIndex)
+fun <A : Any> Parser<A>.zeroOrOneTime(): Parser<A?> =
+    fun(source: String, index: Int): ParseResult<A?> =
+        this(source, index)
+            .let { it as? ParseResult.OK }
+            ?: ParseResult.OK(index, null)
 
-        if (value == null) {
-            mutIndex.start = start
-            return Optional.empty()
+fun <A> Parser<A>.zeroOrMoreTimes(): Parser<List<A>> =
+    fun(source: String, index: Int): ParseResult<List<A>> {
+        val results = mutableListOf<A>()
+        var lastIndex = index
+
+        loop@ while (true) {
+            val result = this(source, lastIndex)
+
+            when (result) {
+                is ParseResult.OK -> {
+                    results.add(result.value)
+                    lastIndex = result.index
+                }
+
+                is ParseResult.Error -> {
+                    break@loop
+                }
+            }
         }
 
-        return Optional.of(value)
+        return ParseResult.OK(lastIndex, results)
     }
 
-fun <A : Any> Parser<A>.zeroOrMoreTimes(): Parser<List<A>> =
-    fun(source: String, mutIndex: MutIndex): List<A>? {
+fun <A, B> Parser<A>.zeroOrMoreTimes(separator: Parser<B>): Parser<List<A>> =
+    fun(source: String, index: Int): ParseResult<List<A>> {
         val values = mutableListOf<A>()
-        var start = mutIndex.start
+        var lastIndex = index
 
-        while (true) {
-            val value = this(source, mutIndex)
-
-            if (value == null) {
-                mutIndex.start = start
-                return values
-            } else {
-                start = mutIndex.start
-                values.add(value)
-            }
+        loop@ while (true) {
+            this(source, lastIndex)
+                .let { it as? ParseResult.OK }
+                ?.let { (nextIndex, nextValue) ->
+                    values.add(nextValue)
+                    lastIndex = nextIndex
+                    separator(source, nextIndex)
+                }
+                ?.let { it as? ParseResult.OK }
+                ?.let { (nextIndex, _) -> lastIndex = nextIndex }
+                ?: return ParseResult.OK(lastIndex, values)
         }
     }
 
-fun <A : Any, B : Any> Parser<A>.zeroOrMoreTimes(separator: Parser<B>): Parser<List<A>> =
-    fun(source: String, mutIndex: MutIndex): List<A>? {
-        val values = mutableListOf<A>()
+fun <A> Parser<A>.oneOrMoreTimes(): Parser<List<A>> =
+    fun(source: String, index: Int): ParseResult<List<A>> {
+        val firstResult = this(source, index)
 
-        values.add(this(source, mutIndex) ?: return values)
-        var start = mutIndex.start
+        when (firstResult) {
+            is ParseResult.OK -> {
+                val results = mutableListOf(firstResult.value)
+                var lastIndex = firstResult.index
 
-        while (true) {
-            if (separator(source, mutIndex) == null) {
-                mutIndex.start = start
-                return values
+                while (true) {
+                    this(source, lastIndex)
+                        .let { result -> result as? ParseResult.OK }
+                        ?.let { (nextIndex, nextValue) ->
+                            results.add(nextValue)
+                            lastIndex = nextIndex
+                        }
+                        ?: return ParseResult.OK(lastIndex, results)
+                }
             }
 
-            val value = this(source, mutIndex)
-
-            if (value == null) {
-                mutIndex.start = start
-                return values
-            } else {
-                start = mutIndex.start
-                values.add(value)
-            }
+            is ParseResult.Error ->
+                return ParseResult.Error(firstResult.index)
         }
     }
 
-fun <A : Any> Parser<A>.oneOrMoreTimes(): Parser<List<A>> =
-    fun(source: String, mutIndex: MutIndex): List<A>? {
-        val values = mutableListOf(this(source, mutIndex) ?: return null)
-        var start = mutIndex.start
+fun <A, B> Parser<A>.oneOrMoreTimes(separator: Parser<B>): Parser<List<A>> =
+    fun(source: String, index: Int): ParseResult<List<A>> {
+        val firstResult = this(source, index)
 
-        while (true) {
-            val value = this(source, mutIndex)
-
-            if (value == null) {
-                mutIndex.start = start
-                return values
-            }
-
-            values.add(value)
-            start = mutIndex.start
+        if (firstResult !is ParseResult.OK) {
+            firstResult as ParseResult.Error
+            return ParseResult.Error(firstResult.index)
         }
-    }
 
-fun <A : Any, B : Any> Parser<A>.oneOrMoreTimes(separator: Parser<B>): Parser<List<A>> =
-    fun(source: String, mutIndex: MutIndex): List<A>? {
-        val values = mutableListOf(this(source, mutIndex) ?: return null)
-        var start = mutIndex.start
+        val results = mutableListOf(firstResult.value)
+        var lastIndex = firstResult.index
 
         while (true) {
-            if (separator(source, mutIndex) == null) {
-                mutIndex.start = start
-                return values
-            }
-
-            val value = this(source, mutIndex)
-
-            if (value == null) {
-                mutIndex.start = start
-                return values
-            }
-
-            values.add(value)
-            start = mutIndex.start
+            (separator(source, lastIndex) as? ParseResult.OK)
+                ?.index
+                ?.let { nextIndex -> this(source, nextIndex) }
+                ?.let { result -> result as? ParseResult.OK }
+                ?.let { (nextIndex, nextValue) ->
+                    results.add(nextValue)
+                    lastIndex = nextIndex
+                }
+                ?: return ParseResult.OK(lastIndex, results)
         }
     }
 
 fun parseOneOfChars(chars: String): Parser<Char> =
-    fun(source: String, mutIndex: MutIndex): Char? {
-        if (mutIndex.start >= source.length) {
-            return null
+    fun(source: String, index: Int): ParseResult<Char> {
+        if (index >= source.length) {
+            return ParseResult.Error(index)
         }
 
-        val c = source[mutIndex.start]
+        val c = source[index]
 
-        if (chars.contains(c)) {
-            mutIndex.start += 1
-            return c
+        return when {
+            chars.contains(c) -> ParseResult.OK(index + 1, c)
+            else -> ParseResult.Error(index)
         }
-
-        return null
     }
 
 fun parseChar(char: Char): Parser<Char> =
-    fun(source: String, mutIndex: MutIndex): Char? {
-        if (mutIndex.start >= source.length) {
-            return null
+    fun(source: String, index: Int): ParseResult<Char> =
+        when {
+            index >= source.length -> ParseResult.Error(index)
+            source[index] == char -> ParseResult.OK(index + 1, char)
+            else -> ParseResult.Error(index)
         }
 
-        val c = source[mutIndex.start]
+fun <A> A.parseLift(): Parser<A> =
+    fun(_: String, index: Int): ParseResult<A> =
+        ParseResult.OK(index, this)
 
-        if (char == c) {
-            mutIndex.start += 1
-            return char
+fun <A, B> Parser<A>.keepPrevious(nextParser: Parser<B>) =
+    fun(source: String, index: Int): ParseResult<A> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> {
+                val nextResult = nextParser(source, result.index)
+
+                when (nextResult) {
+                    is ParseResult.OK -> ParseResult.OK(
+                        nextResult.index,
+                        result.value
+                    )
+                    is ParseResult.Error -> ParseResult.Error(
+                        nextResult.index
+                    )
+                }
+            }
+
+            is ParseResult.Error ->
+                result
         }
-
-        return null
     }
 
-fun <A : Any> A.parseLift(): Parser<A> =
-    fun(_: String, mutIndex: MutIndex): A =
-        this
+fun <A, B> Parser<A>.map(f: (A) -> B): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
 
-fun <A : Any, B : Any> Parser<A>.keepPrevious(nextParser: Parser<B>) =
-    fun(source: String, mutIndex: MutIndex): A? {
-        val value = this(source, mutIndex) ?: return null
-        nextParser(source, mutIndex) ?: return null
-        return value
-    }
-
-fun <A : Any, B : Any> Parser<A>.map(f: (A) -> B): Parser<B> =
-    fun(source: String, mutIndex: MutIndex): B? =
-        this(source, mutIndex)?.let(f)
-
-fun <A : Any, B : Any> Parser<A>.becomes(newValue: B): Parser<B> =
-    fun(source: String, mutIndex: MutIndex): B? {
-        this(source, mutIndex) ?: return null
-        return newValue
-    }
-
-fun <A : Any> Parser<A>.otherwise(default: A): Parser<A> =
-    fun(source: String, mutMutIndex: MutIndex): A? {
-        val start = mutMutIndex.start
-        val value = this(source, mutMutIndex)
-
-        if (value == null) {
-            mutMutIndex.start = start
-            return default
+        return when (result) {
+            is ParseResult.OK -> ParseResult.OK(result.index, f(result.value))
+            is ParseResult.Error -> result
         }
-
-        return value
     }
 
-fun <A : Any, B : Any> Parser<A>.keepNext(parser: Parser<B>): Parser<B> =
-    fun(source: String, mutIndex: MutIndex): B? {
-        this(source, mutIndex) ?: return null
-        return parser(source, mutIndex)
+fun <A, B> Parser<A>.becomes(newValue: B): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> ParseResult.OK(result.index, newValue)
+            is ParseResult.Error -> result
+        }
+    }
+
+fun <A> Parser<A>.otherwise(default: A): Parser<A> =
+    fun(source: String, index: Int): ParseResult<A> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> result
+            is ParseResult.Error -> ParseResult.OK(index, default)
+        }
+    }
+
+fun <A, B> Parser<A>.keepNext(parser: Parser<B>): Parser<B> =
+    fun(source: String, index: Int): ParseResult<B> {
+        val result = this(source, index)
+
+        return when (result) {
+            is ParseResult.OK -> parser(source, result.index)
+            is ParseResult.Error -> result
+        }
     }
 
 val parseDigits: Parser<List<Char>> = parseOneOfChars("0123456789")
