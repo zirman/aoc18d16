@@ -2,7 +2,7 @@ package com.aoc18.day24
 
 import com.aoc18.day16.parseEndLine
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.becomes
 import com.aoc18.parser.keepNext
@@ -246,7 +246,7 @@ fun runSimuation(
 fun main() {
     val file = readFile("day24.txt")
     val result = parseBiology.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val (initialImmuneSystem, initialInfection) = result.value
 
     run {

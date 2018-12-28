@@ -1,7 +1,7 @@
 package com.aoc18.day20
 
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.becomes
 import com.aoc18.parser.otherwise
@@ -253,7 +253,7 @@ fun makeDistanceGrid(houseGrid: HouseGrid): DistanceGrid {
 fun main() {
     val file = readFile("day20.txt")
     val result = parseFile.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val houseGrid = makeHouseGrid(result.value)
     println(houseGrid)
     val distanceGrid = makeDistanceGrid(houseGrid)

@@ -2,7 +2,7 @@ package com.aoc18.day23
 
 import com.aoc18.day16.parseDigits
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepNext
 import com.aoc18.parser.keepPrevious
@@ -106,7 +106,7 @@ fun distancePos(pos1: Pos, pos2: Pos): Int =
 fun main() {
     val file = readFile("day23.txt")
     val result = parseNanoBotFile.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val nanobots = result.value
 
     val largestRadiusBot = nanobots.maxBy { it.radius }!!

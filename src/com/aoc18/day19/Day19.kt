@@ -3,7 +3,7 @@ package com.aoc18.day19
 import com.aoc18.day16.parseEndLine
 import com.aoc18.day16.parseSpace
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepPrevious
 import com.aoc18.parser.becomes
@@ -177,7 +177,7 @@ fun main() {
     val file = readFile("day19.txt")
 
     val result = parseFile.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val (ipRegister, instructionList) = result.value
     val instructions = instructionList.toTypedArray()
 

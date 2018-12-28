@@ -2,7 +2,7 @@ package com.aoc18.day25
 
 import com.aoc18.day16.parseEndLine
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepNext
 import com.aoc18.parser.keepPrevious
@@ -68,7 +68,7 @@ data class SpaceTime(val bounds: Bounds) {
 fun main() {
     val file = readFile("day25.txt")
     val result = parsePointFile.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val points = result.value
 
     val spaceTime =

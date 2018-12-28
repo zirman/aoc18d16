@@ -3,7 +3,7 @@ package com.aoc18.day17
 import com.aoc18.day16.parseEndLine
 import com.aoc18.day16.parsePosNum
 import com.aoc18.parser.Parser
-import com.aoc18.parser.Result
+import com.aoc18.parser.Either
 import com.aoc18.parser.andThen
 import com.aoc18.parser.keepPrevious
 import com.aoc18.parser.orElse
@@ -232,7 +232,7 @@ fun initBoard(clayRanges: List<ClayRange>): FlowBoard {
 fun main() {
     val file = readFile("day17.txt")
     val result = parseClayFile.parse(file)
-    result as Result.Ok
+    result as Either.Ok
     val board: FlowBoard = initBoard(result.value)
     flowDown(board, 500, board.yOrigin)
     println(board.toString())
